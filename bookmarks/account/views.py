@@ -11,9 +11,9 @@ def user_login(request):
         if form.is_valid():
             cd = form.cleaned_data
             user = authenticate(
-                request, usename=cd['username'], password=cd['password']
+                request, username=cd['username'], password=cd['password']
             )
-            if user is None:
+            if user is not None:
                 if user.is_active:
                     login(request, user)
                     return HttpResponse('Authentificated successfully')
