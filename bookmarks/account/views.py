@@ -32,7 +32,4 @@ def user_login(request):
 
 @login_required
 def dashboard(request):
-    context = {
-        'section': 'dashboard'
-    }
-    return render(request, 'account/dashboard.html', context)
+    return render(request, 'account/dashboard.html', {'section': 'dashboard'})
