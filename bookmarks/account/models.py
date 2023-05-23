@@ -7,9 +7,9 @@ class Profile(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
-    date_birth = models.DateField(blank=True, null=True)
+    date_of_birth = models.DateField(blank=True, null=True)
     photo = models.ImageField(
-        upload_to='users/%Y/%m/%d/',
+        upload_to='users/%d/%m/%Y/',
         blank=True
     )
 
